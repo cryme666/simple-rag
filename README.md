@@ -123,4 +123,3 @@ curl -X DELETE http://localhost:8000/ingest/clear
 
 - **Embedding dimension:** 768 (`all-mpnet-base-v2`). Old 3072-dim data is incompatible.
 - **`distance_threshold`:** default `0.5`. Use `/debug/search` to calibrate for your corpus.
-- **`ragmq` container:** if you see a separate `ragmq` (RabbitMQ) container running, it is **not part of this project** and can be stopped.
