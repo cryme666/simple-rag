@@ -32,6 +32,12 @@ class Settings(BaseSettings):
     query_transform_min_query_len: int = 8
     query_transform_fallback_max_prev_user_messages: int = 5
 
+    cors_origins: str = (
+        "http://localhost:5173,"
+        "http://localhost:3000,"
+        "https://frontend-production-c4ccd.up.railway.app"
+    )
+
     # Modern Pydantic V2 configuration
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
