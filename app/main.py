@@ -1,3 +1,4 @@
+import os
 import logging
 import time
 from contextlib import asynccontextmanager
@@ -39,6 +40,7 @@ app = FastAPI(
 
 _settings = get_settings()
 _cors_origins = [origin.strip() for origin in _settings.cors_origins.split(",") if origin.strip()]
+logger.info("CORS allow_origins: %s", _cors_origins)
 
 app.add_middleware(
     CORSMiddleware,
@@ -76,4 +78,7 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=False)
+    
+
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=False)
