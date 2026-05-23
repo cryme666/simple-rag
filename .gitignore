@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDEs and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+
+# NLTK / model caches
+.nltk_data/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Docker / local data
+pgdata/
